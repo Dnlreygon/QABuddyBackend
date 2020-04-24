@@ -1,0 +1,30 @@
+{
+  "name": "qabuddybackend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --require @babel/register './test/specs/**.js'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dnlreygon/QABuddyBackend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dnlreygon/QABuddyBackend/issues"
+  },
+  "homepage": "https://github.com/Dnlreygon/QABuddyBackend#readme",
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "@babel/register": "^7.9.0",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "dotenv": "^8.2.0",
+    "mocha": "^7.1.1"
+  }
+}
