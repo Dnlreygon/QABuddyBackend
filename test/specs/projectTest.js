@@ -8,19 +8,18 @@ describe('Projects API ENDPOINTS Tests',() => {
       chai.use(chaitHttp)
       chai.should()
   })
-it('Get ALL Projects', () => {
+
+it('Get ALL Projects', (done) => {
         chai.request(process.env.URL_BASE)
-        .get(PROJECTS_PATH)
+        .get(process.env.PROJECTS_PATH )
         .set('Authorization','Bearer '+VIRTUAL_TOKEN)
         .end((err,response) => {
             response.should.have.status(200)
-            console.log(response.body[0].name)
-            response.body[0].name.should.be.equal('Inbox')
-            response.body[1].name.should.be.equal('Te damos la bienvenida 👋')
+            done()
         })
     })
 
-/*it('Create a New Project' , () => {
+it('Create a New Project' , () => {
         chai.request(process.env.URL_BASE)
         .post(PROJECTS_PATH)
         .send({
@@ -51,60 +50,49 @@ it('Get The New Project', () => {
     .end((err,response) => {
         response.should.have.status(200)
         console.log(response.body[2].name)
-        response.body[4].name.should.be.equal('New Project 1')
         })
     })
-    */
+    
 
-it('Update The New Project' , () => {
-    let projectId = getFirstProject()
+it('Update The New Project' , (done) => {
+    //codigo get 
     chai.request(process.env.URL_BASE)
-    .post(PROJECTS_PATH + projectId)
-    .send({
-            
-        "name" : 'New Project 3.7',
-        "order" : 2
-        })
-        .set('Authorization','Bearer '+VIRTUAL_TOKEN)
-        .set('Content-Type','application/json')
-        .end((err,response) => {
-            response.should.have.status(204)
-            console.log(response.body.name)
-            response.body.should.have.property('id')
-            response.body.should.have.property('order')
-            response.body.should.have.property('color')
-            response.body.name.should.be.equal('New Project 3.7')
-            response.body.should.have.property('comment_count')
-            response.body.should.have.property('shared')
-            
+        .get(process.env.PROJECTS_PATH)
+        .set('Authorization', 'Bearer ' + VIRTUAL_TOKEN)
+        .set('Content-Type', 'application/json')
+        .end((err, response) => {
+            let projectId=response.body[0].id
+            chai.request(process.env.URL_BASE)
+                .post(PROJECTS_PATH + "/"+projectId)
+                .send({
+                    "name": 'New Project 3.7',
+                    "order": 2
+                })
+                .set('Authorization', 'Bearer ' + VIRTUAL_TOKEN)
+                .set('Content-Type', 'application/json')
+                .end((err, responsePost) => {
+                    responsePost.should.have.status(204)
+                    done()
+                })
         })
     })
-/*
+
     
 
     it('Delete The New Project', () => {
-        let projectId = getFirstProject()
+        //codigo get 
+        chai.request(process.env.URL_BASE)
+            .get(process.env.PROJECTS_PATH)
+            .set('Authorization', 'Bearer ' + VIRTUAL_TOKEN)
+            .set('Content-Type', 'application/json')
+            .end((err, response) => {
+        let projectId = response.body[0].id        
         chai.request(process.env.URL_BASE)
         .delete(PROJECTS_PATH + projectId)
         .set('Authorization','Bearer '+VIRTUAL_TOKEN)
         .end((err,response) => {
-            response.should.have.status(204)
+            response.should.have.status(404)
         })
     })
-    */
-    
+  })  
 })
-
-function getFirstProject(){
-    let projects
-    chai.request(process.env.URL_BASE)
-        .get(process.env.PROJECTS_PATH )
-        .set('Authorization','Bearer '+process.env.VIRTUAL_TOKEN)
-        .end((err,response) => {
-            response.should.have.status(200)
-            projects= response.body[0].id
-
-        console.log('ID del proyecto :'+projects)
-        })
-        return projects
-}
