@@ -49,7 +49,6 @@ it('Get The New Project', () => {
     .set('Authorization','Bearer '+VIRTUAL_TOKEN)
     .end((err,response) => {
         response.should.have.status(200)
-        console.log(response.body[2].name)
         })
     })
     
@@ -86,12 +85,13 @@ it('Update The New Project' , (done) => {
             .set('Authorization', 'Bearer ' + VIRTUAL_TOKEN)
             .set('Content-Type', 'application/json')
             .end((err, response) => {
-        let projectId = response.body[0].id        
+        let projectId = response.body[2].id
+        console.log("delete the project " + response.body[2].name)
         chai.request(process.env.URL_BASE)
-        .delete(PROJECTS_PATH + projectId)
+        .delete(PROJECTS_PATH + '/' + projectId)
         .set('Authorization','Bearer '+VIRTUAL_TOKEN)
         .end((err,response) => {
-            response.should.have.status(404)
+            response.should.have.status(204)
         })
     })
   })  
