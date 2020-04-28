@@ -60,7 +60,7 @@ it('Update The New Project' , (done) => {
         .set('Authorization', 'Bearer ' + VIRTUAL_TOKEN)
         .set('Content-Type', 'application/json')
         .end((err, response) => {
-            let projectId=response.body[0].id
+            let projectId=response.body[2].id
             chai.request(process.env.URL_BASE)
                 .post(PROJECTS_PATH + "/"+projectId)
                 .send({
