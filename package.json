@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --timeout 5000 --require @babel/register './test/specs/**.js'"
+    "test": "mocha --timeout 5000 --require @babel/register './test/specs/taskTest.js'"
   },
   "repository": {
     "type": "git",
