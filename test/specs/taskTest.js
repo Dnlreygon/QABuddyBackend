@@ -59,7 +59,7 @@ describe('Projects API ENDPOINTS Tests',() => {
         .set('Authorization', 'Bearer ' + VIRTUAL_TOKEN)
         .set('Content-Type', 'application/json')
         .end((err, response) => {
-            let projectId=response.body[33].id
+            let projectId=response.body[response.body.length-1].id
             chai.request(process.env.URL_BASE)
                 .post(TASK_PATH + "/"+projectId)
                 .send({
@@ -74,6 +74,7 @@ describe('Projects API ENDPOINTS Tests',() => {
                     })
                 })
             })
+
     it('Close The New Task' , (done) => {
         //codigo get 
         chai.request(process.env.URL_BASE)
@@ -81,8 +82,8 @@ describe('Projects API ENDPOINTS Tests',() => {
         .set('Authorization', 'Bearer ' + VIRTUAL_TOKEN)
         .set('Content-Type', 'application/json')
         .end((err, response) => {
-            let projectId=response.body[33].id
-            console.log("close the task " + response.body[33].id)
+            let projectId = response.body[response.body.length - 1].id
+            console.log("close the task " + response.body[response.body.length-1].id)
                 chai.request(process.env.URL_BASE)
                 .post(TASK_PATH + "/"+projectId + "/close")
                 .set('Authorization', 'Bearer ' + VIRTUAL_TOKEN)
@@ -100,17 +101,26 @@ describe('Projects API ENDPOINTS Tests',() => {
         .set('Authorization', 'Bearer ' + VIRTUAL_TOKEN)
         .set('Content-Type', 'application/json')
         .end((err, response) => {
-            let projectId=response.content("New Task 1.5").id
-            console.log("Reopen the task " + response.body[33].content)
-                chai.request(process.env.URL_BASE)
-                .post(TASK_PATH + "/"+projectId + "/reopen")
+            //codigo close
+            let projectId = response.body[response.body.length - 1].id
+            chai.request(process.env.URL_BASE)
+                .post(TASK_PATH + "/" + projectId + "/close")
                 .set('Authorization', 'Bearer ' + VIRTUAL_TOKEN)
                 .end((err, responsePost) => {
                     responsePost.should.have.status(204)
-                    done()
-                    })
-                })
+                    //codigo re-open
+                    console.log("Reopen the task " + projectId)
+                    chai.request(process.env.URL_BASE)
+                        .post(TASK_PATH + "/" + projectId + "/reopen")
+                        .set('Authorization', 'Bearer ' + VIRTUAL_TOKEN)
+                        .end((err, responsePost) => {
+                            responsePost.should.have.status(204)
+                            done()
+                        })
+                   })
+            })
         })
+
     it('Delete The New Task', (done) => {
         //codigo get 
          chai.request(process.env.URL_BASE)
@@ -118,8 +128,8 @@ describe('Projects API ENDPOINTS Tests',() => {
             .set('Authorization', 'Bearer ' + VIRTUAL_TOKEN)
             .set('Content-Type', 'application/json')
             .end((err, response) => {
-        let projectId = response.body[33].id
-        console.log("delete the Task: " + response.body[33].content)
+                let projectId = response.body[response.body.length - 1].id
+        console.log("delete the Task: " + response.body[response.body.length-1].content)
         chai.request(process.env.URL_BASE)
         .delete(TASK_PATH + '/' + projectId)
         .set('Authorization','Bearer '+VIRTUAL_TOKEN)
