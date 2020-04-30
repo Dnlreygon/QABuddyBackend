@@ -1,3 +1,4 @@
+/* eslint handle-callback-err: "off" */
 import {} from 'dotenv/config'
 import chai from 'chai'
 import chaitHttp from 'chai-http'
@@ -13,7 +14,7 @@ describe('Projects API ENDPOINTS Tests', () => {
     chai.request(process.env.URL_BASE)
       .get(process.env.PROJECTS_PATH)
       .set('Authorization', 'Bearer ' + VIRTUAL_TOKEN)
-      .end((response) => {
+      .end((err, response) => {
         response.should.have.status(200)
         done()
       })
@@ -28,7 +29,7 @@ describe('Projects API ENDPOINTS Tests', () => {
       })
       .set('Authorization', 'Bearer ' + VIRTUAL_TOKEN)
       .set('Content-Type', 'application/json')
-      .end((response) => {
+      .end((err, response) => {
         response.should.have.status(200)
         console.log(response.body.name)
         response.body.should.have.property('id')
@@ -44,7 +45,7 @@ describe('Projects API ENDPOINTS Tests', () => {
     chai.request(process.env.URL_BASE)
       .get(PROJECTS_PATH)
       .set('Authorization', 'Bearer ' + VIRTUAL_TOKEN)
-      .end((response) => {
+      .end((err, response) => {
         response.should.have.status(200)
       })
   })
@@ -55,8 +56,8 @@ describe('Projects API ENDPOINTS Tests', () => {
       .get(process.env.PROJECTS_PATH)
       .set('Authorization', 'Bearer ' + VIRTUAL_TOKEN)
       .set('Content-Type', 'application/json')
-      .end((response) => {
-        const projectId = response.body[2].id
+      .end((err, response) => {
+        const projectId = response.body[response.body.length - 1].id
         chai.request(process.env.URL_BASE)
           .post(PROJECTS_PATH + '/' + projectId)
           .send({
@@ -65,7 +66,7 @@ describe('Projects API ENDPOINTS Tests', () => {
           })
           .set('Authorization', 'Bearer ' + VIRTUAL_TOKEN)
           .set('Content-Type', 'application/json')
-          .end((responsePost) => {
+          .end((err, responsePost) => {
             responsePost.should.have.status(204)
             done()
           })
@@ -78,13 +79,13 @@ describe('Projects API ENDPOINTS Tests', () => {
       .get(process.env.PROJECTS_PATH)
       .set('Authorization', 'Bearer ' + VIRTUAL_TOKEN)
       .set('Content-Type', 'application/json')
-      .end((response) => {
+      .end((err, response) => {
         const projectId = response.body[2].id
         console.log('delete the project ' + response.body[2].name)
         chai.request(process.env.URL_BASE)
           .delete(PROJECTS_PATH + '/' + projectId)
           .set('Authorization', 'Bearer ' + VIRTUAL_TOKEN)
-          .end((response) => {
+          .end((err, response) => {
             response.should.have.status(204)
           })
       })

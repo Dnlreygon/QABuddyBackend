@@ -1,7 +1,8 @@
+/* eslint handle-callback-err: "off" */
 import {} from 'dotenv/config'
 import chai from 'chai'
 import chaitHttp from 'chai-http'
-describe('Projects API ENDPOINTS Tests', () => {
+describe('Tasks API ENDPOINTS Tests', () => {
   const VIRTUAL_TOKEN = process.env.VIRTUAL_TOKEN
   const TASK_PATH = process.env.TASK_PATH
 
@@ -14,7 +15,7 @@ describe('Projects API ENDPOINTS Tests', () => {
     chai.request(process.env.URL_BASE)
       .get(process.env.TASK_PATH)
       .set('Authorization', 'Bearer ' + VIRTUAL_TOKEN)
-      .end((response) => {
+      .end((err, response) => {
         response.should.have.status(200)
         done()
       })
@@ -29,7 +30,7 @@ describe('Projects API ENDPOINTS Tests', () => {
       })
       .set('Authorization', 'Bearer ' + VIRTUAL_TOKEN)
       .set('Content-Type', 'application/json')
-      .end((response) => {
+      .end((err, response) => {
         response.should.have.status(200)
         console.log(response.body.content)
         response.body.should.have.property('id')
@@ -43,7 +44,7 @@ describe('Projects API ENDPOINTS Tests', () => {
     chai.request(process.env.URL_BASE)
       .get(TASK_PATH)
       .set('Authorization', 'Bearer ' + VIRTUAL_TOKEN)
-      .end((response) => {
+      .end((err, response) => {
         response.should.have.status(200)
         done()
       })
@@ -55,7 +56,7 @@ describe('Projects API ENDPOINTS Tests', () => {
       .get(process.env.TASK_PATH)
       .set('Authorization', 'Bearer ' + VIRTUAL_TOKEN)
       .set('Content-Type', 'application/json')
-      .end((response) => {
+      .end((err, response) => {
         const projectId = response.body[response.body.length - 1].id
         chai.request(process.env.URL_BASE)
           .post(TASK_PATH + '/' + projectId)
@@ -65,7 +66,7 @@ describe('Projects API ENDPOINTS Tests', () => {
           })
           .set('Authorization', 'Bearer ' + VIRTUAL_TOKEN)
           .set('Content-Type', 'application/json')
-          .end((responsePost) => {
+          .end((err, responsePost) => {
             responsePost.should.have.status(204)
             done()
           })
@@ -78,13 +79,13 @@ describe('Projects API ENDPOINTS Tests', () => {
       .get(process.env.TASK_PATH)
       .set('Authorization', 'Bearer ' + VIRTUAL_TOKEN)
       .set('Content-Type', 'application/json')
-      .end((response) => {
+      .end((err, response) => {
         const projectId = response.body[response.body.length - 1].id
         console.log('close the task ' + response.body[response.body.length - 1].id)
         chai.request(process.env.URL_BASE)
           .post(TASK_PATH + '/' + projectId + '/close')
           .set('Authorization', 'Bearer ' + VIRTUAL_TOKEN)
-          .end((responsePost) => {
+          .end((err, responsePost) => {
             responsePost.should.have.status(204)
             done()
           })
@@ -97,20 +98,20 @@ describe('Projects API ENDPOINTS Tests', () => {
       .get(process.env.TASK_PATH)
       .set('Authorization', 'Bearer ' + VIRTUAL_TOKEN)
       .set('Content-Type', 'application/json')
-      .end((response) => {
+      .end((err, response) => {
         // codigo close
         const projectId = response.body[response.body.length - 1].id
         chai.request(process.env.URL_BASE)
           .post(TASK_PATH + '/' + projectId + '/close')
           .set('Authorization', 'Bearer ' + VIRTUAL_TOKEN)
-          .end((responsePost) => {
+          .end((err, responsePost) => {
             responsePost.should.have.status(204)
             // codigo re-open
             console.log('Reopen the task ' + projectId)
             chai.request(process.env.URL_BASE)
               .post(TASK_PATH + '/' + projectId + '/reopen')
               .set('Authorization', 'Bearer ' + VIRTUAL_TOKEN)
-              .end((responsePost) => {
+              .end((err, responsePost) => {
                 responsePost.should.have.status(204)
                 done()
               })
@@ -124,13 +125,13 @@ describe('Projects API ENDPOINTS Tests', () => {
       .get(process.env.TASK_PATH)
       .set('Authorization', 'Bearer ' + VIRTUAL_TOKEN)
       .set('Content-Type', 'application/json')
-      .end((response) => {
+      .end((err, response) => {
         const projectId = response.body[response.body.length - 1].id
         console.log('delete the Task: ' + response.body[response.body.length - 1].content)
         chai.request(process.env.URL_BASE)
           .delete(TASK_PATH + '/' + projectId)
           .set('Authorization', 'Bearer ' + VIRTUAL_TOKEN)
-          .end((response) => {
+          .end((err, response) => {
             response.should.have.status(204)
             done()
           })

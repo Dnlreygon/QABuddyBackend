@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npm run lint && mocha --timeout 5000 --require @babel/register './test/specs/**.js'",
+    "test": "npm run lint && mocha --timeout 10000 --require @babel/register './test/specs/**.js'",
     "lint": "eslint test/"
   },
   "repository": {
