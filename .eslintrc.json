@@ -1,0 +1,19 @@
+{
+    "plugins": ["mocha"],
+    "parser": "babel-eslint",
+    "extends": ["eslint:recommended","standard"],
+    "env": {
+        "es6": true,
+        "node": true,
+        "mocha":true
+    },
+    "globals": {
+            "$": true,
+            "$$": true,
+            "browser": true,
+            "expect": true,
+            "Atomics": "readonly",
+            "SharedArrayBuffer": "readonly",
+            "should": "readonly"
+    }
+}
