@@ -30,6 +30,10 @@ jobs:
         URL_BASE: https://api.todoist.com/rest/v1
         PROJECTS_PATH: /projects 
         TASK_PATH: /tasks
+    - name: Slack Notify
+      uses: rtCamp/action-slack-notify@v2.0.1
+      env:
+        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}  
 
 
 

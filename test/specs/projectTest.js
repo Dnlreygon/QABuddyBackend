@@ -22,9 +22,10 @@ describe('Projects API ENDPOINTS Tests', () => {
 
   it('Create a New Project', () => {
     chai.request(process.env.URL_BASE)
+    const nameProject = PRJ + '_' + Math.floor(Date.now() / 10000)
       .post(PROJECTS_PATH)
       .send({
-        name: 'New Project 1',
+        name: nameProject,
         order: 2
       })
       .set('Authorization', 'Bearer ' + VIRTUAL_TOKEN)
@@ -58,10 +59,11 @@ describe('Projects API ENDPOINTS Tests', () => {
       .set('Content-Type', 'application/json')
       .end((err, response) => {
         const projectId = response.body[response.body.length - 1].id
+        const nameProject = PRJ + '_' + Math.floor(Date.now() / 10000)
         chai.request(process.env.URL_BASE)
           .post(PROJECTS_PATH + '/' + projectId)
           .send({
-            name: 'New Project 3.7',
+            name: nameProject,
             order: 2
           })
           .set('Authorization', 'Bearer ' + VIRTUAL_TOKEN)
