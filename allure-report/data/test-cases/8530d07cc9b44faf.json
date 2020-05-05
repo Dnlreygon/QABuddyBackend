@@ -1,0 +1,46 @@
+{
+  "uid" : "8530d07cc9b44faf",
+  "name" : "Token Not Sent",
+  "fullName" : "Projects API ENDPOINTS Tests.Token Not Sent",
+  "historyId" : "b8e53b60893ab650d474407c49fa8528",
+  "time" : {
+    "start" : 1588708911012,
+    "stop" : 1588708911330,
+    "duration" : 318
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Projects API ENDPOINTS Tests"
+  }, {
+    "name" : "testClass",
+    "value" : "Projects API ENDPOINTS Tests"
+  }, {
+    "name" : "testMethod",
+    "value" : "Token Not Sent"
+  }, {
+    "name" : "package",
+    "value" : "Projects API ENDPOINTS Tests"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "8530d07cc9b44faf.json",
+  "parameterValues" : [ ]
+}

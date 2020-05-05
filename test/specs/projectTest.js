@@ -5,6 +5,7 @@ import chaitHttp from 'chai-http'
 describe('Projects API ENDPOINTS Tests', () => {
   const VIRTUAL_TOKEN = process.env.VIRTUAL_TOKEN
   const PROJECTS_PATH = process.env.PROJECTS_PATH
+  const PRJ = 'Project'
   beforeEach(() => {
     chai.use(chaitHttp)
     chai.should()
@@ -20,9 +21,38 @@ describe('Projects API ENDPOINTS Tests', () => {
       })
   })
 
-  it('Create a New Project', () => {
+  it('Authotization Header Not Sent', (done) => {
     chai.request(process.env.URL_BASE)
+      .get(process.env.PROJECTS_PATH)
+      .end((err, response) => {
+        response.should.have.status(400)
+        done()
+      })
+  })
+
+  it('Token Not Sent', (done) => {
+    chai.request(process.env.URL_BASE)
+      .get(process.env.PROJECTS_PATH)
+      .set('Authorization', 'Bearer ' + VIRTUAL_TOKEN + 'blabla')
+      .end((err, response) => {
+        response.should.have.status(403)
+        done()
+      })
+  })
+
+  it('Service Not Found', (done) => {
+    chai.request(process.env.URL_BASE)
+      .get(process.env.PROJECTS_PATH + 'blabla')
+      .set('Authorization', 'Bearer ' + VIRTUAL_TOKEN)
+      .end((err, response) => {
+        response.should.have.status(404)
+        done()
+      })
+  })
+
+  it('Create a New Project', () => {
     const nameProject = PRJ + '_' + Math.floor(Date.now() / 10000)
+    chai.request(process.env.URL_BASE)
       .post(PROJECTS_PATH)
       .send({
         name: nameProject,
@@ -32,11 +62,9 @@ describe('Projects API ENDPOINTS Tests', () => {
       .set('Content-Type', 'application/json')
       .end((err, response) => {
         response.should.have.status(200)
-        console.log(response.body.name)
         response.body.should.have.property('id')
         response.body.should.have.property('order')
         response.body.should.have.property('color')
-        response.body.name.should.be.equal('New Project 1')
         response.body.should.have.property('comment_count')
         response.body.should.have.property('shared')
       })
@@ -53,13 +81,13 @@ describe('Projects API ENDPOINTS Tests', () => {
 
   it('Update The New Project', (done) => {
     // codigo get
+    const nameProject = PRJ + '_' + Math.floor(Date.now() / 10000)
     chai.request(process.env.URL_BASE)
       .get(process.env.PROJECTS_PATH)
       .set('Authorization', 'Bearer ' + VIRTUAL_TOKEN)
       .set('Content-Type', 'application/json')
       .end((err, response) => {
         const projectId = response.body[response.body.length - 1].id
-        const nameProject = PRJ + '_' + Math.floor(Date.now() / 10000)
         chai.request(process.env.URL_BASE)
           .post(PROJECTS_PATH + '/' + projectId)
           .send({
@@ -83,7 +111,6 @@ describe('Projects API ENDPOINTS Tests', () => {
       .set('Content-Type', 'application/json')
       .end((err, response) => {
         const projectId = response.body[2].id
-        console.log('delete the project ' + response.body[2].name)
         chai.request(process.env.URL_BASE)
           .delete(PROJECTS_PATH + '/' + projectId)
           .set('Authorization', 'Bearer ' + VIRTUAL_TOKEN)

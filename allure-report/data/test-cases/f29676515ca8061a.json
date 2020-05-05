@@ -1,0 +1,46 @@
+{
+  "uid" : "f29676515ca8061a",
+  "name" : "Delete The New Project",
+  "fullName" : "Projects API ENDPOINTS Tests.Delete The New Project",
+  "historyId" : "7d3182a7880d72af9bd9d3d8436d2fc3",
+  "time" : {
+    "start" : 1588708912106,
+    "stop" : 1588708912108,
+    "duration" : 2
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Projects API ENDPOINTS Tests"
+  }, {
+    "name" : "testClass",
+    "value" : "Projects API ENDPOINTS Tests"
+  }, {
+    "name" : "testMethod",
+    "value" : "Delete The New Project"
+  }, {
+    "name" : "package",
+    "value" : "Projects API ENDPOINTS Tests"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "f29676515ca8061a.json",
+  "parameterValues" : [ ]
+}

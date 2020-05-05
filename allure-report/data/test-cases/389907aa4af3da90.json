@@ -1,0 +1,46 @@
+{
+  "uid" : "389907aa4af3da90",
+  "name" : "Update The New Project",
+  "fullName" : "Projects API ENDPOINTS Tests.Update The New Project",
+  "historyId" : "fe886a890f983e483534708a7f99d90b",
+  "time" : {
+    "start" : 1588708911595,
+    "stop" : 1588708912105,
+    "duration" : 510
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Projects API ENDPOINTS Tests"
+  }, {
+    "name" : "testClass",
+    "value" : "Projects API ENDPOINTS Tests"
+  }, {
+    "name" : "testMethod",
+    "value" : "Update The New Project"
+  }, {
+    "name" : "package",
+    "value" : "Projects API ENDPOINTS Tests"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "389907aa4af3da90.json",
+  "parameterValues" : [ ]
+}

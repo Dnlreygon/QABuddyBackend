@@ -1,0 +1,46 @@
+{
+  "uid" : "96634a4439f24bd3",
+  "name" : "Close The New Task",
+  "fullName" : "Tasks API ENDPOINTS Tests.Close The New Task",
+  "historyId" : "9ee7d51eaf12c5c8eeeeee9d1e4e51df",
+  "time" : {
+    "start" : 1588708913085,
+    "stop" : 1588708913587,
+    "duration" : 502
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Tasks API ENDPOINTS Tests"
+  }, {
+    "name" : "testClass",
+    "value" : "Tasks API ENDPOINTS Tests"
+  }, {
+    "name" : "testMethod",
+    "value" : "Close The New Task"
+  }, {
+    "name" : "package",
+    "value" : "Tasks API ENDPOINTS Tests"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "96634a4439f24bd3.json",
+  "parameterValues" : [ ]
+}

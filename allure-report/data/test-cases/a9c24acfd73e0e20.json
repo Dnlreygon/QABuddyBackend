@@ -1,0 +1,46 @@
+{
+  "uid" : "a9c24acfd73e0e20",
+  "name" : "Create a New Task",
+  "fullName" : "Tasks API ENDPOINTS Tests.Create a New Task",
+  "historyId" : "584889693a03cfd955986c3a57a6a06a",
+  "time" : {
+    "start" : 1588708912342,
+    "stop" : 1588708912344,
+    "duration" : 2
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Tasks API ENDPOINTS Tests"
+  }, {
+    "name" : "testClass",
+    "value" : "Tasks API ENDPOINTS Tests"
+  }, {
+    "name" : "testMethod",
+    "value" : "Create a New Task"
+  }, {
+    "name" : "package",
+    "value" : "Tasks API ENDPOINTS Tests"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "a9c24acfd73e0e20.json",
+  "parameterValues" : [ ]
+}

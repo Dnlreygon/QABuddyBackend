@@ -32,7 +32,6 @@ describe('Tasks API ENDPOINTS Tests', () => {
       .set('Content-Type', 'application/json')
       .end((err, response) => {
         response.should.have.status(200)
-        console.log(response.body.content)
         response.body.should.have.property('id')
         response.body.should.have.property('order')
         response.body.content.should.be.equal('New Task 1')
@@ -81,7 +80,6 @@ describe('Tasks API ENDPOINTS Tests', () => {
       .set('Content-Type', 'application/json')
       .end((err, response) => {
         const projectId = response.body[response.body.length - 1].id
-        console.log('close the task ' + response.body[response.body.length - 1].id)
         chai.request(process.env.URL_BASE)
           .post(TASK_PATH + '/' + projectId + '/close')
           .set('Authorization', 'Bearer ' + VIRTUAL_TOKEN)
@@ -107,7 +105,6 @@ describe('Tasks API ENDPOINTS Tests', () => {
           .end((err, responsePost) => {
             responsePost.should.have.status(204)
             // codigo re-open
-            console.log('Reopen the task ' + projectId)
             chai.request(process.env.URL_BASE)
               .post(TASK_PATH + '/' + projectId + '/reopen')
               .set('Authorization', 'Bearer ' + VIRTUAL_TOKEN)
@@ -120,20 +117,31 @@ describe('Tasks API ENDPOINTS Tests', () => {
   })
 
   it('Delete The New Task', (done) => {
-    // codigo get
+    // codigo create
     chai.request(process.env.URL_BASE)
-      .get(process.env.TASK_PATH)
+      .post(TASK_PATH)
+      .send({
+        content: 'New Task 1',
+        order: 33
+      })
       .set('Authorization', 'Bearer ' + VIRTUAL_TOKEN)
       .set('Content-Type', 'application/json')
       .end((err, response) => {
-        const projectId = response.body[response.body.length - 1].id
-        console.log('delete the Task: ' + response.body[response.body.length - 1].content)
+      // codigo get
         chai.request(process.env.URL_BASE)
-          .delete(TASK_PATH + '/' + projectId)
+          .get(process.env.TASK_PATH)
           .set('Authorization', 'Bearer ' + VIRTUAL_TOKEN)
+          .set('Content-Type', 'application/json')
           .end((err, response) => {
-            response.should.have.status(204)
-            done()
+            const projectId = response.body[response.body.length - 1].id
+            // codigo delete
+            chai.request(process.env.URL_BASE)
+              .delete(TASK_PATH + '/' + projectId)
+              .set('Authorization', 'Bearer ' + VIRTUAL_TOKEN)
+              .end((err, response) => {
+                response.should.have.status(204)
+                done()
+              })
           })
       })
   })

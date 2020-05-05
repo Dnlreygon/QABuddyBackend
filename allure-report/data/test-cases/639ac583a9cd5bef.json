@@ -1,0 +1,46 @@
+{
+  "uid" : "639ac583a9cd5bef",
+  "name" : "Authotization Header Not Sent",
+  "fullName" : "Projects API ENDPOINTS Tests.Authotization Header Not Sent",
+  "historyId" : "b09f44142f306a5de0374e3b1e08069f",
+  "time" : {
+    "start" : 1588708910718,
+    "stop" : 1588708911012,
+    "duration" : 294
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Projects API ENDPOINTS Tests"
+  }, {
+    "name" : "testClass",
+    "value" : "Projects API ENDPOINTS Tests"
+  }, {
+    "name" : "testMethod",
+    "value" : "Authotization Header Not Sent"
+  }, {
+    "name" : "package",
+    "value" : "Projects API ENDPOINTS Tests"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "639ac583a9cd5bef.json",
+  "parameterValues" : [ ]
+}

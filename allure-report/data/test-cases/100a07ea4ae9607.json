@@ -1,0 +1,46 @@
+{
+  "uid" : "100a07ea4ae9607",
+  "name" : "Service Not Found",
+  "fullName" : "Projects API ENDPOINTS Tests.Service Not Found",
+  "historyId" : "44c08a5d50737962d7b8dbf8f0e96c4",
+  "time" : {
+    "start" : 1588708911330,
+    "stop" : 1588708911590,
+    "duration" : 260
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Projects API ENDPOINTS Tests"
+  }, {
+    "name" : "testClass",
+    "value" : "Projects API ENDPOINTS Tests"
+  }, {
+    "name" : "testMethod",
+    "value" : "Service Not Found"
+  }, {
+    "name" : "package",
+    "value" : "Projects API ENDPOINTS Tests"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "100a07ea4ae9607.json",
+  "parameterValues" : [ ]
+}
