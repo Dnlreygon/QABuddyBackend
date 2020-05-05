@@ -11,6 +11,9 @@
 # Run Project Tests & Task Test
 - Execute: ``` npm test ```
 
+# Allure Reporter
+- Once our backend finish, use the following command: ```allure generate ./allure-results && allure open```
+
 # CI
 
 - It runs in GitHub Actions once we do a ```commit``` & ```push```to our branch.
