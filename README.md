@@ -16,7 +16,7 @@
 - It runs in GitHub Actions once we do a ```commit``` & ```push```to our branch.
 
 # POSTMAN
-- Create your collections and use the same setup to monitor your actions.
+- Create your collections and use the same config to monitor your actions.
 
 # INFO.
 
