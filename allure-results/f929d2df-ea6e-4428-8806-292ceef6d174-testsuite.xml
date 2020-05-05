@@ -1,0 +1,63 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1588708912115' stop='1588708915415'>
+    <name>Tasks API ENDPOINTS Tests</name>
+    <title>Tasks API ENDPOINTS Tests</title>
+    <test-cases>
+        <test-case start='1588708912115' status='passed' stop='1588708912342'>
+            <name>Get All Tasks</name>
+            <title>Get All Tasks</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1588708912342' status='passed' stop='1588708912344'>
+            <name>Create a New Task</name>
+            <title>Create a New Task</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1588708912344' status='passed' stop='1588708912640'>
+            <name>Get The New Task</name>
+            <title>Get The New Task</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1588708912641' status='passed' stop='1588708913084'>
+            <name>Update The New Task</name>
+            <title>Update The New Task</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1588708913085' status='passed' stop='1588708913587'>
+            <name>Close The New Task</name>
+            <title>Close The New Task</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1588708913587' status='passed' stop='1588708914497'>
+            <name>Reopen The New Task</name>
+            <title>Reopen The New Task</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1588708914498' status='passed' stop='1588708915414'>
+            <name>Delete The New Task</name>
+            <title>Delete The New Task</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

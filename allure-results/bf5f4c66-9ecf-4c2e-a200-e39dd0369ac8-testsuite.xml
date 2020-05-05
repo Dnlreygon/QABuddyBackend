@@ -1,0 +1,71 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1588708910377' stop='1588708912108'>
+    <name>Projects API ENDPOINTS Tests</name>
+    <title>Projects API ENDPOINTS Tests</title>
+    <test-cases>
+        <test-case start='1588708910378' status='passed' stop='1588708910718'>
+            <name>Get ALL Projects</name>
+            <title>Get ALL Projects</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1588708910718' status='passed' stop='1588708911012'>
+            <name>Authotization Header Not Sent</name>
+            <title>Authotization Header Not Sent</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1588708911012' status='passed' stop='1588708911330'>
+            <name>Token Not Sent</name>
+            <title>Token Not Sent</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1588708911330' status='passed' stop='1588708911590'>
+            <name>Service Not Found</name>
+            <title>Service Not Found</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1588708911590' status='passed' stop='1588708911593'>
+            <name>Create a New Project</name>
+            <title>Create a New Project</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1588708911593' status='passed' stop='1588708911594'>
+            <name>Get The New Project</name>
+            <title>Get The New Project</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1588708911595' status='passed' stop='1588708912105'>
+            <name>Update The New Project</name>
+            <title>Update The New Project</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1588708912106' status='passed' stop='1588708912108'>
+            <name>Delete The New Project</name>
+            <title>Delete The New Project</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

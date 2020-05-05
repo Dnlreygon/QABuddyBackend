@@ -1,0 +1,47 @@
+name: Node.js CI
+
+on:
+  push:
+    branches: [ master , development ]
+  pull_request:
+    branches: [ master , development ]
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron: '0 */3 * * *'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm install
+    - run: npm ci
+    - run: npm run build --if-present
+    - run: npm test
+      env:
+        CI: true
+        VIRTUAL_TOKEN: ${{secrets.VIRTUAL_TOKEN}}
+        URL_BASE: https://api.todoist.com/rest/v1
+        PROJECTS_PATH: /projects 
+        TASK_PATH: /tasks
+    - name: Slack Notify
+      uses: rtCamp/action-slack-notify@v2.0.1
+      env:
+        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}  
+
+
+
+
+
+
+
+
+
+
+

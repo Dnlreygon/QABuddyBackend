@@ -1,0 +1,26 @@
+{
+  "total" : 2,
+  "items" : [ {
+    "uid" : "6467896749471582f4bf2efb56eb71ee",
+    "name" : "Projects API ENDPOINTS Tests",
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 8,
+      "unknown" : 0,
+      "total" : 8
+    }
+  }, {
+    "uid" : "9ac295ebd02b2857bc4826719811bf8f",
+    "name" : "Tasks API ENDPOINTS Tests",
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 7,
+      "unknown" : 0,
+      "total" : 7
+    }
+  } ]
+}

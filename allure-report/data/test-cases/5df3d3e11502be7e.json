@@ -1,0 +1,46 @@
+{
+  "uid" : "5df3d3e11502be7e",
+  "name" : "Get ALL Projects",
+  "fullName" : "Projects API ENDPOINTS Tests.Get ALL Projects",
+  "historyId" : "ccbe5acf6c83367c0b5c946aeeaa4cc4",
+  "time" : {
+    "start" : 1588708910378,
+    "stop" : 1588708910718,
+    "duration" : 340
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Projects API ENDPOINTS Tests"
+  }, {
+    "name" : "testClass",
+    "value" : "Projects API ENDPOINTS Tests"
+  }, {
+    "name" : "testMethod",
+    "value" : "Get ALL Projects"
+  }, {
+    "name" : "package",
+    "value" : "Projects API ENDPOINTS Tests"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "5df3d3e11502be7e.json",
+  "parameterValues" : [ ]
+}
